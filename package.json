@@ -1,0 +1,22 @@
+{
+  "name": "pantanal-frota",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Gestão de frota da Pantanal Licenças: despesas, entradas, vencimentos, multas, comissões e relatório mensal por veículo",
+  "workspaces": [
+    "server",
+    "web"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c blue,cyan \"npm run dev -w server\" \"npm run dev -w web\"",
+    "build": "npm run build -w web",
+    "start": "npm run start -w server",
+    "seed": "npm run seed -w server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  },
+  "engines": {
+    "node": ">=22.13"
+  }
+}
