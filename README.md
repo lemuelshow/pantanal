@@ -40,6 +40,18 @@ Variáveis de ambiente:
 
 Para backup, basta copiar o arquivo do banco com a API parada.
 
+### Deploy no Render
+
+| Campo | Valor |
+|---|---|
+| Build Command | `npm install && npm run build` |
+| Start Command | `npm start` |
+| Versão do Node | definida em `.node-version` (22) |
+
+O disco do Render é apagado a cada deploy. Para não perder os dados, crie um **Persistent Disk**
+(ex.: montado em `/var/data`) e defina `DB_PATH=/var/data/pantanal.db`.
+O `.npmrc` do projeto fixa o registro público do npm.
+
 ## Testes
 
 ```bash
